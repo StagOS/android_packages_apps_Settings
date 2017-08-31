@@ -209,4 +209,7 @@
 
     <!-- Background for multiple user settings page avatars -->
     <color name="user_avatar_color_bg">?androidprv:attr/colorSurface</color>
+
+    <!--Generic Circle for Horn's dashboard logo-->
+    <color name="homepage_horns_background">#9E9E9E</color>
 </resources>

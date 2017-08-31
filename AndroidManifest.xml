@@ -1,3 +1,4 @@
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.android.settings"
           coreApp="true"
@@ -4498,6 +4499,23 @@
                       android:host="com.android.settings.backup.transport" />
             </intent-filter>
         </activity>
+
+        <!-- Horns additions -->
+        <activity android:name=".Settings$HornsActivity"
+                  android:label="@string/horns_title"
+                  android:icon="@drawable/ic_homepage_horns"
+                  android:exported="true"
+                  android:parentActivityName="com.android.settings">
+            <intent-filter>
+                <action android:name="com.android.settings.action.SETTINGS"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.stag.horns.Horns"/>
+            <meta-data android:name="com.android.settings.summary"
+                       android:resource="@string/horns_summary"/>
+        </activity>
+
+>>>>>>> 6ec983e3c3 (Add Horns dashboard)
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
