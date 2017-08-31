@@ -54,12 +54,17 @@ android_library {
         "SpaPrivilegedLib-defaults",
     ],
 
-    srcs: ["src/**/*.java", "src/**/*.kt"],
+    srcs: ["src/**/*.java",
+           "src/**/*.kt",
+           "Horns/src/**/*.java",
+    ],
     resource_dirs: [
         "res",
         "res-export", // for external usage
         "res-product",
+        "Horns/res"
     ],
+
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
         "androidx.slice_slice-builders",
@@ -109,6 +114,7 @@ android_library {
         "telephony-common",
         "ims-common",
     ],
+
 }
 
 platform_compat_config {
