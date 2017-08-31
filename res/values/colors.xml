@@ -217,4 +217,7 @@
 
     <!-- Switch bar disabled state color-->
     <color name="switch_bar_state_disabled_color">#1F1F1F1F</color>
+
+    <!--Generic Circle for Horn's dashboard logo-->
+    <color name="homepage_horns_background">#9E9E9E</color>
 </resources>
