@@ -27,7 +27,7 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java"],
+    srcs: ["src/**/*.java"] + ["../Horns/src/**/*.java"],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
@@ -62,6 +62,10 @@ android_library {
         "ims-common",
         "app-compat-annotations",
     ],
+    aaptflags: [ "--auto-add-overlay",
+        "--extra-packages",
+        "com.stag.horns",
+    ],
 }
 
 platform_compat_config {
@@ -81,7 +85,7 @@ android_app {
         "settings-platform-compat-config",
     ],
     static_libs: ["Settings-core"],
-    resource_dirs: [],
+    resource_dirs: ["packages/apps/Horns/res"],
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },

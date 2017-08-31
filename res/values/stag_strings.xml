@@ -23,4 +23,9 @@
     <string name="stag_build_default">Unknown</string>
     <string name="stag_build_type">Build status</string>
     <string name="stag_device">Device</string>
+
+    <!-- Horns -->
+    <string name="horns_title">Horns</string>
+    <string name="horns_summary">Where you grow</string>
+
 </resources>
