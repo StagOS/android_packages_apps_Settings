@@ -44,7 +44,16 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java", "src/**/*.kt"],
+    srcs: ["src/**/*.java",
+	   "src/**/*.kt",
+           "Horns/src/**/*.java",
+    ],
+
+    aaptflags: ["--extra-packages com.stag.horns"],
+
+    resource_dirs: ["res",
+                    "Horns/res"
+    ],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
@@ -84,6 +93,7 @@ android_library {
         "ims-common",
         "app-compat-annotations",
     ],
+
 }
 
 platform_compat_config {
