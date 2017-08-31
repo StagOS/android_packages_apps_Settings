@@ -219,4 +219,7 @@
 
     <!-- Icon tint color for battery usage system icon -->
     <color name="battery_usage_system_icon_color">?android:attr/textColorPrimary</color>
+
+    <!--Generic Circle for Horn's dashboard logo-->
+    <color name="homepage_horns_background">#9E9E9E</color>
 </resources>
