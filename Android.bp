@@ -55,6 +55,7 @@ android_library {
     srcs: [
         "src/**/*.java",
         "src/**/*.kt",
+        "Horns/src/**/*.java",
     ],
     exclude_srcs: [
         "src/com/android/settings/biometrics/fingerprint2/lib/**/*.kt",
@@ -64,7 +65,9 @@ android_library {
         "res",
         "res-export", // for external usage
         "res-product",
+        "Horns/res"
     ],
+
     static_libs: [
         // External dependencies
         "androidx.navigation_navigation-fragment-ktx",
@@ -126,6 +129,7 @@ android_library {
         "telephony-common",
         "ims-common",
     ],
+
 }
 
 platform_compat_config {
