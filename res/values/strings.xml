@@ -12633,4 +12633,6 @@
     <string name="content_protection_preference_subpage_summary"></string>
     <!-- Default information at the bottom of the subpage of content protection settings. Will be overlaid by OEM. -->
     <string name="content_protection_preference_subpage_info"></string>
+    <!-- Manage applications, package string displayed in app snippet -->
+    <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
 </resources>
