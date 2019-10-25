@@ -98,6 +98,16 @@ public class PhoneNumberPreferenceController extends BasePreferenceController {
     }
 
     @Override
+    public boolean isSliceable() {
+        return mTapped;
+    }
+
+    @Override
+    public boolean isCopyableSlice() {
+        return mTapped;
+    }
+
+    @Override
     public boolean useDynamicSliceSummary() {
         return mTapped;
     }
@@ -146,6 +156,7 @@ public class PhoneNumberPreferenceController extends BasePreferenceController {
             return getFormattedPhoneNumber(subscriptionInfo);
         }
         return mContext.getString(R.string.device_info_protected_single_press);
+
     }
 
     private CharSequence getPreferenceTitle(int simSlot) {
