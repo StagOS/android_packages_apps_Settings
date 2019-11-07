@@ -36,4 +36,8 @@
     <!-- Horns -->
     <string name="horns_title">Horns</string>
     <string name="horns_summary">Where Android Grows Horns</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe down with three fingers to take a screenshot</string>
 </resources>
