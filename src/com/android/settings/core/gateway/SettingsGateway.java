@@ -165,6 +165,7 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.stag.horns.Horns;
 import com.stag.horns.fragments.GlobalActionsSettings;
 import com.stag.horns.fragments.SmartPixels;
+import com.stag.horns.fragments.GamingMode;
 
 public class SettingsGateway {
 
@@ -318,7 +319,8 @@ public class SettingsGateway {
             MediaControlsSettings.class.getName(),
             Horns.class.getName(),
             GlobalActionsSettings.class.getName(),
-            SmartPixels.class.getName()
+            SmartPixels.class.getName(),
+            GamingMode.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -361,5 +363,6 @@ public class SettingsGateway {
             Settings.HornsActivity.class.getName(),
             Settings.GlobalActionsSettingsActivity.class.getName(),
             Settings.SmartPixelsActivity.class.getName(),
+            Settings.GamingModeActivity.class.getName()
     };
 }
