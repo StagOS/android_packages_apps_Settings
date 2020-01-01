@@ -22,6 +22,7 @@ import com.android.settings.IccLockSettings;
 import com.android.settings.MainClear;
 import com.android.settings.MainClearConfirm;
 import com.android.settings.Settings;
+import com.android.settings.ThemeSettings;
 import com.android.settings.TestingSettings;
 import com.android.settings.TetherSettings;
 import com.android.settings.TrustedCredentialsSettings;
@@ -328,7 +329,8 @@ public class SettingsGateway {
             NetworkSelectSettings.class.getName(),
             AlarmsAndRemindersDetails.class.getName(),
             MediaManagementAppsDetails.class.getName(),
-            Horns.class.getName()
+            Horns.class.getName(),
+            ThemeSettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
