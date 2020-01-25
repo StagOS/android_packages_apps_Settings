@@ -77,4 +77,8 @@
     <string name="high_touch_polling_rate_title">High touch polling rate</string>
     <string name="high_touch_polling_rate_summary">Increase touchscreen polling rate</string>
 
+    <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Invert navigation bar layout</string>
+    <string name="navbar_invert_info">Swap the \"Back\" and \"Recents\" buttons on the navigation bar</string>
+
 </resources>
