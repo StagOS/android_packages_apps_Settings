@@ -17,7 +17,9 @@
     <string name="horns_summary">Where you grow</string>
 
     <!-- StagOS version preference -->
-    <string name="stagos_version">StagOS version</string>
+    <string name="stag_build_default">Unknown</string>
+    <string name="stag_device">Device</string>
+    <string name="stag_version">StagOS version</string>
     <string name="build_date">Build date</string>
 
     <!-- Fingerprint location message - default -->

@@ -30,11 +30,19 @@
 
     <!-- StagOS version -->
     <Preference
-        android:key="stagos_version"
-        android:title="@string/stagos_version"
+        android:key="stag_version"
+        android:title="@string/stag_version"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.StagOSVersionDetailPreferenceController"/>
+
+    <!-- Stag Device -->
+    <Preference
+        android:key="stag_device"
+        android:title="@string/stag_device"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.StagOSDevicePreferenceController"/>
 
     <!-- Android version --> 
     <Preference
