@@ -130,6 +130,16 @@
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
             settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
+
+        <!-- StagOS version -->
+        <Preference
+            android:key="stag_version"
+            android:order="43"
+            android:title="@string/stag_version"
+            android:summary="@string/summary_placeholder"
+            android:fragment="com.android.settings.deviceinfo.stag.StagVersionSettings"
+            settings:controller="com.android.settings.deviceinfo.stag.StagVersionPreferenceController"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
