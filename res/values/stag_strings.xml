@@ -27,6 +27,8 @@
     <string name="stag_build_type">Build status</string>
     <string name="stag_device">Device</string>
 
+    <string name="stag_maintainer">Maintainer</string>
+
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
 
