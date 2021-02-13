@@ -27,6 +27,8 @@
     <string name="stag_build_type">Build status</string>
     <string name="stag_device">Device</string>
 
+    <string name="stag_maintainer">Maintainer</string>
+
     <!-- Horns -->
     <string name="horns_title">Horns</string>
     <string name="horns_summary">Where Android Grows Horns</string>

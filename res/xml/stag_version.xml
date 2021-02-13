@@ -49,6 +49,14 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.stag.StagBuildTypePreferenceController"/>
 
+    <!-- StagOS Maintainer -->
+    <Preference
+        android:key="stag_maintainer"
+        android:title="@string/stag_maintainer"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.stag.StagMaintainerPreferenceController"/>
+
     <!-- StagOS build date -->
     <Preference
         android:key="stag_build_date"
