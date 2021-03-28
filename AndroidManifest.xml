@@ -114,6 +114,12 @@
     <!-- LineageHardware -->
     <uses-permission android:name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS" />
 
+    <permission android:name="lineageos.permission.MANAGE_REMOTE_PREFERENCES"
+                android:protectionLevel="signature|privileged" />
+
+    <protected-broadcast android:name="lineageos.intent.action.UPDATE_PREFERENCE" />
+    <protected-broadcast android:name="lineageos.intent.action.REFRESH_PREFERENCE" />
+
     <application android:label="@string/settings_label"
             android:icon="@drawable/ic_launcher_settings"
             android:theme="@style/Theme.Settings"
