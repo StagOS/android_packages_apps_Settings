@@ -3862,7 +3862,6 @@
                   android:theme="@style/SudThemeGlif.Light">
         </activity>
 
-<<<<<<< HEAD
         <activity android:name=".backup.transport.TransportActivity"
                   android:label="@string/backup_transport_title"
                   android:icon="@drawable/ic_settings_backup"
@@ -3890,7 +3889,6 @@
                        android:resource="@string/horns_summary"/>
         </activity>
 
-=======
         <!-- Face unlock -->
         <activity android:name="com.android.settings.custom.biometrics.face.FaceEnrollActivity"
             android:permission="com.android.settings.FACE_UNLOCK"
@@ -3902,7 +3900,6 @@
             </intent-filter>
         </activity>
 
->>>>>>> 67662f43a0 (Initial import of Face Unlock for S)
         <!-- This is the longest AndroidManifest.xml ever. -->
 
         <!-- Start of our manifest entries -->
