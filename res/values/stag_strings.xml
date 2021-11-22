@@ -112,4 +112,15 @@
     <string name="disabled">Disabled</string>
     <string name="always_on_display_schedule_mixed_sunset">Turns on from sunset till a time</string>
     <string name="always_on_display_schedule_mixed_sunrise">Turns on from a time till sunrise</string>
+
+    <!-- Custom vibration intensity -->
+    <string name="vibration_intensity_title">Vibration Intensity</string>
+    <string name="vibration_intensity_summary">Control vibration intensity for different streams</string>
+    <string name="notification_vibration_intensity_title">Notifications</string>
+    <string name="ring_vibration_intensity_title">Ring</string>
+    <string name="haptic_feedback_intensity_title">Haptic Feedback</string>
+    <string name="vibration_intensity_off">Disabled</string>
+    <string name="vibration_intensity_low">Low</string>
+    <string name="vibration_intensity_medium">Medium</string>
+    <string name="vibration_intensity_high">High</string>
 </resources>
