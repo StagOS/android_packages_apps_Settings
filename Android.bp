@@ -51,7 +51,7 @@ android_library {
     aaptflags: ["--extra-packages com.stag.horns"],
 
     resource_dirs: ["res",
-                    "Horns/res"
+                    "Horns/res",
 	            "res-pixel",
     ],
 
