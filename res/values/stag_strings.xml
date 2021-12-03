@@ -209,4 +209,7 @@
     <!-- Screen resolution -->
     <string name="custom_screen_resolution_title">Custom screen resolution</string>
 
+    <!-- App fragment -->
+    <string name="search">Search</string>
+    <string name="search_apps">Search apps</string>
 </resources>
