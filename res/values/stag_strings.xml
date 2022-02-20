@@ -158,4 +158,8 @@
     <string name="doze_on_charge_title">Always on when charging</string>
     <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
 
+    <!-- Optimized charge -->
+    <string name="optimized_charge_title">Optimized charging</string>
+    <string name="optimized_charge_summary">Limit charging to 75%-80% to extend battery life</string>
+
 </resources>
