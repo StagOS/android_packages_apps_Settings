@@ -73,6 +73,7 @@ android_library {
         "androidx.lifecycle_lifecycle-runtime",
         "androidx.lifecycle_lifecycle-extensions",
         "guava",
+	"glide",
         "jsr305",
         "net-utils-framework-common",
         "settings-contextual-card-protos-lite",
