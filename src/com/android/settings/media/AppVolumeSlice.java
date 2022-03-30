@@ -43,6 +43,8 @@ import androidx.slice.builders.SliceAction;
 import com.android.settings.Utils;
 import com.android.settings.slices.CustomSliceable;
 import com.android.settings.slices.SliceBroadcastReceiver;
+import com.android.settings.R;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +62,11 @@ public class AppVolumeSlice implements CustomSliceable {
     public AppVolumeSlice(Context context) {
         mContext = context;
         mAudioManager = context.getSystemService(AudioManager.class);
+    }
+
+    @Override
+    public int getSliceHighlightMenuRes() {
+        return R.string.menu_key_battery;
     }
 
     @Override

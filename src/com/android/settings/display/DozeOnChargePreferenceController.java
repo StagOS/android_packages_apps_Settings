@@ -20,6 +20,7 @@ import android.content.Context;
 import android.hardware.display.AmbientDisplayConfiguration;
 import android.os.UserHandle;
 import android.provider.Settings;
+import com.android.settings.R;
 
 import com.android.settings.core.TogglePreferenceController;
 
@@ -34,6 +35,12 @@ public class DozeOnChargePreferenceController extends TogglePreferenceController
     @Override
     public int getAvailabilityStatus() {
         return isAvailable(getConfig()) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
+    }
+
+
+    @Override
+    public int getSliceHighlightMenuRes() {
+        return R.string.menu_key_display;
     }
 
     @Override
