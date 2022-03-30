@@ -37,6 +37,11 @@ public class BatterySaverRefreshRatePreferenceController extends TogglePreferenc
     }
 
     @Override
+    public int getSliceHighlightMenuRes() {
+        return R.string.menu_key_battery;
+    }
+
+    @Override
     public boolean setChecked(boolean isChecked) {
         int val = isChecked ? 1 : 0;
         return Settings.System.putInt(mContext.getContentResolver(), LOW_POWER_REFRESH_RATE, val);
