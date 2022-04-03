@@ -116,7 +116,7 @@
         settings:highlightableMenuKey="@string/menu_key_accessibility"
         settings:controller="com.android.settings.accessibility.TopLevelAccessibilityPreferenceController"/>
 
-    <Preference
+    <com.android.settings.widget.HomepagePreference
         android:key="top_level_horns"
         android:title="@string/horns_title"
         android:summary="@string/horns_summary"
