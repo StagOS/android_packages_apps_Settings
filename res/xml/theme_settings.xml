@@ -27,7 +27,7 @@
         android:summary="@string/system_black_theme_summary"
         android:defaultValue="false" />
 
-    <com.stag.horns.preferences.SecureSettingSwitchPreference
+    <!-- <com.stag.horns.preferences.SecureSettingSwitchPreference
         android:key="monet_engine_custom_color"
         android:title="@string/monet_engine_custom_color_title"
         android:summary="@string/monet_engine_custom_color_summary"
@@ -63,7 +63,7 @@
     <com.stag.horns.preferences.SecureSettingSwitchPreference
         android:key="monet_engine_linear_lightness"
         android:title="@string/monet_engine_linear_lightness_title"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 
     </PreferenceCategory>
 </PreferenceScreen>
