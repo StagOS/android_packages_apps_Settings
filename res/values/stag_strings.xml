@@ -64,7 +64,7 @@
 
     <!-- Themes -->
     <string name="themes_title">Themes</string>
-    <string name="themes_summary">Custom theming</string>
+    <string name="themes_summary">Monet-an artist who paints..</string>
 
     <!-- Monet Engine -->
     <string name="monet_engine_custom_color_title">Use custom color</string>
