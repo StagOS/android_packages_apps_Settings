@@ -131,4 +131,11 @@
     <string name="gesture_navbar_length_title">Pill length</string>
     <string name="hide_label">Hidden</string>
     <string name="long_label">Long</string>
+
+    <!-- Package details -->
+    <string name="package_details_group_title">Package details</string>
+    <string name="package_name">Package name</string>
+    <string name="package_version">Package version</string>
+    <string name="package_version_text"><xliff:g id="version_num">%1$s</xliff:g></string>
+
 </resources>
