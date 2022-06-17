@@ -153,7 +153,7 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment i
         if (info.getKey() == KEY_SYSTEM_NAV_GESTURAL) {
             pref.setExtraWidgetOnClickListener((v) -> startActivity(new Intent(
                     GestureNavigationSettingsFragment.GESTURE_NAVIGATION_SETTINGS)));
-        } else if (info.getKey() == KEY_SYSTEM_NAV_3BUTTONS) {
+        } else if (info.getKey() == KEY_SYSTEM_NAV_3BUTTONS || info.getKey() == KEY_SYSTEM_NAV_2BUTTONS) {
             pref.setExtraWidgetOnClickListener((v) -> ThreeButtonNavigationInvertDialog
                     .show(this));
         }
