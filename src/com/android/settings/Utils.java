@@ -21,6 +21,7 @@ import static android.content.Intent.EXTRA_USER_ID;
 import static android.os.UserManager.USER_TYPE_FULL_SYSTEM;
 import static android.os.UserManager.USER_TYPE_PROFILE_MANAGED;
 import static android.os.UserManager.USER_TYPE_PROFILE_PRIVATE;
+import static android.provider.Settings.System.CUSTOM_UI_TOGGLE;
 import static android.text.format.DateUtils.FORMAT_ABBREV_MONTH;
 import static android.text.format.DateUtils.FORMAT_SHOW_DATE;
 
@@ -82,6 +83,7 @@ import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.Profile;
 import android.provider.ContactsContract.RawContacts;
+import android.provider.Settings;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.Spannable;
@@ -1288,7 +1290,9 @@ public final class Utils extends com.android.settingslib.Utils {
      */
     @ColorInt
     public static int getHomepageIconColor(Context context) {
-        return getColorAttrDefaultColor(context, android.R.attr.colorAccent);
+        int customUIToggleValue = Settings.System.getInt(context.getContentResolver(),
+                 CUSTOM_UI_TOGGLE, 0);
+        return getColorAttrDefaultColor(context, customUIToggleValue == 1 ? android.R.attr.colorAccent : android.R.attr.textColorPrimary);
     }
 
     /**
