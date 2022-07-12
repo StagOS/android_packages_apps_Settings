@@ -195,6 +195,12 @@
             android:defaultValue="false"
             settings:controller="com.android.settings.custom.touch.HighTouchSensitivitySettingsPreferenceController" />
 
+        <SwitchPreference
+            android:key="custom_ui_toggle"
+            android:title="@string/custom_ui_toggle_title"
+            android:summary="@string/custom_ui_toggle_summary"
+            android:defaultValue="false" />
+
         <ListPreference
             android:key="theme"
             android:title="@string/device_theme"

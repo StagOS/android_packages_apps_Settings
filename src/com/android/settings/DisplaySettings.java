@@ -34,6 +34,8 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.stag.android.settings.preferences.CustomUIPreferenceController;
+
 import com.android.internal.stag.hardware.LineageHardwareManager;
 
 import java.util.ArrayList;
@@ -87,6 +89,7 @@ public class DisplaySettings extends DashboardFragment {
         controllers.add(new ShowOperatorNamePreferenceController(context));
         controllers.add(new ThemePreferenceController(context));
         controllers.add(new BrightnessLevelPreferenceController(context, lifecycle));
+        controllers.add(new CustomUIPreferenceController(context));
         return controllers;
     }
 

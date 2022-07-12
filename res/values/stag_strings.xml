@@ -243,4 +243,9 @@
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Hidden apps</string>
     <string name="hidden_apps_summary">Applications that should be hidden from launcher. Requires a launcher restart for changes to take effect</string>
+
+    <!-- Stag UI -->
+    <string name="custom_ui_toggle_title">Use alternate settings UI</string>
+    <string name="custom_ui_toggle_summary">A reimagined dashboard UI for StagOS</string>
 </resources>
+
