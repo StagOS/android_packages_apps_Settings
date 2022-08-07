@@ -4329,8 +4329,7 @@
        <!-- DU Themes -->
        <activity android:name="Settings$StartThemesActivity"
             android:label="@string/themes_title"
-            android:exported="true"            
-            android:icon="@drawable/ic_homepage_themes">
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />                
