@@ -182,6 +182,8 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.stag.horns.Horns;
 
+import com.google.android.settings.security.SecurityHubDashboard;
+
 public class SettingsGateway {
 
     /**
@@ -350,7 +352,8 @@ public class SettingsGateway {
             AppLocaleDetails.class.getName(),
             TurnScreenOnSettings.class.getName(),
             TurnScreenOnDetails.class.getName(),
-            Horns.class.getName()
+            Horns.class.getName(),
+            SecurityHubDashboard.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
