@@ -48,7 +48,7 @@ public class StagMaintainerPreferenceController extends BasePreferenceController
                 mContext.getString(R.string.stag_build_default));
          String device = SystemProperties.get(KEY_STAG_DEVICE,
                 mContext.getString(R.string.stag_build_default));
-	if (build_type.equals("OFFICIAL")){
+	if (build_type.equals("OFFICIAL") || build_type.equals("BETA")){
 		String rs = "device_" + device + "_maintainer";
 		int resourceId = mContext.getResources().getIdentifier(rs, "string", mContext.getPackageName());
 		try{
