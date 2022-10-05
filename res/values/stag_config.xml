@@ -1,0 +1,4 @@
+<resources>
+    <!-- Diagonal Screen length provided -->
+    <string name="config_screen_diagonal_length" translatable="false"></string>
+</resources>
