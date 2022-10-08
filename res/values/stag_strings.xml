@@ -55,11 +55,6 @@
      <string name="increasing_ring_min_volume_title">Start volume</string>
      <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 
-    <!-- Navbar length -->
-    <string name="navbar_length">Gesture bar length</string>
-    <string name="short_label">Short</string>
-    <string name="long_label">Long</string>
-
     <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
     <string name="duration_less_than_one_minute">Less than 1 minute</string>
     <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
@@ -129,5 +124,4 @@
     <string name="double_tap_title">Double tap</string>
     <string name="doze_double_tap_title">Double tap to check phone</string>
     <string name="doze_double_tap_summary">Pulse notifications by a double tap</string>
-
 </resources>
