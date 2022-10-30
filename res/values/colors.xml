@@ -222,4 +222,6 @@
 
     <!--Generic Circle for Horn's dashboard logo-->
     <color name="homepage_horns_background">#9E9E9E</color>
+
+    <color name="face_enroll_check_color">#42a5f5</color>
 </resources>
