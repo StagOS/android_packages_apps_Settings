@@ -424,5 +424,6 @@ public class SettingsGateway {
             Settings.MemtagPageActivity.class.getName(),
             Settings.NavigationModeSettingsActivity.class.getName(),
             Settings.HornsActivity.class.getName(),
+            Settings.PreviouslyConnectedDeviceDashboardActivity.class.getName(),
     };
 }
