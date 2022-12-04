@@ -206,4 +206,7 @@
     <!-- Density category -->
     <string name="density_category">Density options</string>
     
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Custom screen resolution</string>
+
 </resources>
