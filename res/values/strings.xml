@@ -12641,4 +12641,10 @@
     <string name="content_protection_preference_subpage_info"></string>
     <!-- Manage applications, package string displayed in app snippet -->
     <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
+
+    <!-- Title text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=60] -->
+    <string name="swap_back_recents_title">Swap Back/Recents Navigation</string>
+    <!-- Summary text for swapping the back and recents buttons in the navigation bar. [CHAR LIMIT=NONE] -->
+    <string name="swap_back_recents_summary">Swap the back and recents button in the navigation bar.</string>
+
 </resources>
