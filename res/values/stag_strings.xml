@@ -59,4 +59,8 @@
      <string name="increasing_ring_min_volume_title">Start volume</string>
      <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Less than 1 minute</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">%1$s today</string>
 </resources>
