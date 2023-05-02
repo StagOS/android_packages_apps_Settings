@@ -27,8 +27,10 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.ContentObserver;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -41,6 +43,7 @@ import android.widget.TextView;
 import androidx.annotation.VisibleForTesting;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 import androidx.recyclerview.widget.RecyclerView;
@@ -63,6 +66,14 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.LayoutPreference;
 import com.android.settings.widget.EntityHeaderController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 @SearchIndexable(forTarget = MOBILE)
 public class TopLevelSettings extends DashboardFragment implements SplitLayoutListener,
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
@@ -77,6 +88,16 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private boolean mScrollNeeded = true;
     private boolean mFirstStarted = true;
     private ActivityEmbeddingController mActivityEmbeddingController;
+
+    Map<String, List<String>> categoryPreferences = new LinkedHashMap<>();
+    Map<String, String> categoryTitles = new HashMap<>();
+
+    private final ContentObserver mCustomUIObserver = new ContentObserver(new Handler()) {
+        @Override
+        public void onChange(boolean selfChange) {
+            setCustomUI();
+        }
+    };
 
     public TopLevelSettings() {
         final Bundle args = new Bundle();
@@ -137,6 +158,22 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 
         setHighlightPreferenceKey(preference.getKey());
         return super.onPreferenceTreeClick(preference);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getContext().getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(CUSTOM_UI_TOGGLE),
+                false,
+                mCustomUIObserver
+        );
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getContext().getContentResolver().unregisterContentObserver(mCustomUIObserver);
     }
 
     @Override
@@ -225,11 +262,118 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                 icon.setTint(tintColor);
             }
         });
-	int customUIToggleValue = Settings.System.getInt(getContext().getContentResolver(),
-                 CUSTOM_UI_TOGGLE, 0);
-            if (customUIToggleValue == 1) {
-                onSetPrefCard();
+
+        setCustomUI();
+    }
+
+    private void setCustomUI() {
+        int customUIToggleValue = Settings.System.getInt(getContext().getContentResolver(),
+                CUSTOM_UI_TOGGLE, 0);
+
+        if (customUIToggleValue == 1) {
+            // Restore default UI
+            getPreferenceScreen().removeAll();
+            addPreferencesFromResource(R.xml.top_level_settings);
+        }else{
+
+            onSetPrefCard();
+            setPreferenceMap();
+
+            // For each key in map create category, and for each preference key, remove the
+            // pref from parent view and add to category
+            Set<String> assignedPreferenceKeys = new HashSet<>();
+            for (Map.Entry<String, List<String>> entry : categoryPreferences.entrySet()) {
+                PreferenceCategory category = new PreferenceCategory(getPreferenceManager().getContext());
+                category.setKey(entry.getKey());
+                category.setLayoutResource(R.layout.custom_preference_category); // Use the custom layout
+                category.setTitle(categoryTitles.get(entry.getKey()));
+                getPreferenceScreen().addPreference(category);
+                assignedPreferenceKeys.add(entry.getKey());
+
+                for (String prefKey : entry.getValue()) {
+                    Preference preference = findPreference(prefKey);
+                    if (preference != null) {
+                        getPreferenceScreen().removePreference(preference);
+                        category.addPreference(preference);
+                        assignedPreferenceKeys.add(prefKey);
+                    }
+                }
             }
+
+            // Add all preferences that are not in the map values to extras category. It's
+            // already created
+            PreferenceCategory extrasCategory = (PreferenceCategory) findPreference("extras_category");
+            List<Preference> remainingPrefs = new ArrayList<>();
+
+            for (int i = 0; i < getPreferenceScreen().getPreferenceCount(); i++) {
+                Preference preference = getPreferenceScreen().getPreference(i);
+                if (preference != null && !assignedPreferenceKeys.contains(preference.getKey())) {
+                    remainingPrefs.add(preference);
+                }
+            }
+
+            // if remaining prefs is empty, remove the extras category
+            if (remainingPrefs.isEmpty()) {
+                getPreferenceScreen().removePreference(extrasCategory);
+            } else {
+                for (Preference preference : remainingPrefs) {
+                    getPreferenceScreen().removePreference(preference);
+                    extrasCategory.addPreference(preference);
+                }
+            }
+        }
+    }
+
+    private void setPreferenceMap(){
+        // Connectivity
+        categoryPreferences.put("connectivity_category", List.of(
+            "top_level_network",
+            "top_level_communal",
+            "top_level_connected_devices"
+        ));
+        categoryTitles.put("connectivity_category", "Connectivity");
+
+        // Personalization
+        categoryPreferences.put("personalization_category", List.of(
+            "top_level_display",
+            "top_level_wallpaper",
+            "top_level_accessibility",
+            "top_level_horns"
+        ));
+        categoryTitles.put("personalization_category", "Personalization");
+
+        // Device
+        categoryPreferences.put("device_category", List.of(
+            "top_level_apps",
+            "top_level_notifications",
+            "top_level_battery",
+            "top_level_storage",
+            "top_level_sound"
+        ));
+        categoryTitles.put("device_category", "Device");
+
+        // Privacy & Security
+        categoryPreferences.put("privacy_security_category", List.of(
+            "top_level_security",
+            "top_level_privacy",
+            "top_level_location",
+            "top_level_safety_center",
+            "top_level_emergency"
+        ));
+        categoryTitles.put("privacy_security_category", "Privacy & Security");
+
+        // Account & System
+        categoryPreferences.put("account_system_category", List.of(
+            "top_level_accounts",
+            "top_level_system",
+            "top_level_about_device",
+            "top_level_support"
+        ));
+        categoryTitles.put("account_system_category", "Account & System");
+
+        // Extras
+        categoryPreferences.put("extras_category", List.of());
+        categoryTitles.put("extras_category", "Extras");
     }
 
     private void onSetPrefCard() {
@@ -240,13 +384,14 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 
             String key = preference.getKey();
             preference.setLayoutResource(R.layout.top_level_card);
-	}
+	    }
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         highlightPreferenceIfNeeded();
+        setCustomUI();
     }
 
     @Override
