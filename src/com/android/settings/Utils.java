@@ -1290,7 +1290,7 @@ public final class Utils extends com.android.settingslib.Utils {
     public static int getHomepageIconColor(Context context) {
         int customUIToggleValue = Settings.System.getInt(context.getContentResolver(),
                  CUSTOM_UI_TOGGLE, 0);
-        return getColorAttrDefaultColor(context, customUIToggleValue == 1 ? android.R.attr.colorAccent : android.R.attr.textColorPrimary);
+        return getColorAttrDefaultColor(context, customUIToggleValue == 0 ? android.R.attr.colorAccent : android.R.attr.textColorPrimary);
     }
 
     /**
