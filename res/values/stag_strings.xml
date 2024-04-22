@@ -114,4 +114,11 @@
 
     <!-- In-call notifications -->
     <string name="in_call_notifications_title">In-call notifications</string>
+
+    <!-- Custom themes -->
+    <string name="custom_theme_title">Use Custom theme</string>
+    <string name="custom_theme_black">Black</string>
+    <string name="custom_theme_vivid">Vivid (Monet)</string>
+    <string name="custom_theme_snowpaint">Paint in the Snow</string>
+    <string name="custom_theme_espresso">Espresso</string>
 </resources>
