@@ -1004,6 +1004,12 @@
     <string name="biometric_settings_use_biometric_unlock_phone">Unlock your phone</string>
     <!-- Text shown on a toggle which allows or disallows the device to use biometric for authentication. [CHAR LIMIT=50] -->
     <string name="biometric_settings_use_biometric_for_apps">Verify it\u2019s you in apps</string>
+     <!-- Text shown on a toggle which allows or disallows the device to use face unlock for authentication. [CHAR LIMIT=50] -->
+     <string name="biometric_settings_use_face_for_apps">Use face to verify it\u2019s you in apps</string>
+     <!-- Summary shown on a toggle which allows or disallows the device to use face unlock for authentication. [CHAR LIMIT=50] [ON STATE] -->
+     <string name="biometric_settings_use_face_for_apps_summary_on">Using face to verify it\u2019s you in apps, will work alongside fingerprint</string>
+     <!-- Summary shown on a toggle which allows or disallows the device to use face unlock for authentication. [CHAR LIMIT=50] [OFF STATE] -->
+     <string name="biometric_settings_use_face_for_apps_summary_off">Face unlock will not be used to verify it\u2019s you in apps</string>
     <!-- Message for a biometric preference toggle, indicating that an action can only be performed by using Face Unlock. [CHAR LIMIT=50] -->
     <string name="biometric_settings_use_face_preference_summary">Using face</string>
     <!-- Message for a biometric preference toggle, indicating that an action can only be performed by using Fingerprint Unlock. [CHAR LIMIT=50] -->
