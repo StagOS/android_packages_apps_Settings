@@ -37,7 +37,6 @@ import com.android.settings.deviceinfo.IpAddressPreferenceController;
 import com.android.settings.deviceinfo.ManualPreferenceController;
 import com.android.settings.deviceinfo.RegulatoryInfoPreferenceController;
 import com.android.settings.deviceinfo.SafetyInfoPreferenceController;
-import com.android.settings.deviceinfo.SELinuxStatusPreferenceController;
 import com.android.settings.deviceinfo.UptimePreferenceController;
 import com.android.settings.deviceinfo.WifiMacAddressPreferenceController;
 import com.android.settings.deviceinfo.imei.ImeiInfoPreferenceController;
@@ -158,8 +157,6 @@ public class MyDeviceInfoFragment extends DashboardFragment
         if (executor != null) {
             executor.shutdown();
         }
-
-        controllers.add(new SELinuxStatusPreferenceController(context));
         return controllers;
     }
 
