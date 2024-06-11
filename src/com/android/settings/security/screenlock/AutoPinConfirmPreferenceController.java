@@ -79,7 +79,8 @@ public class AutoPinConfirmPreferenceController extends AbstractPreferenceContro
     }
 
     private boolean isPinLengthEligibleForAutoConfirmation() {
-        return mLockPatternUtils.getPinLength(mUserId) >= MIN_AUTO_PIN_REQUIREMENT_LENGTH;
+        return true;
+        // return mLockPatternUtils.getPinLength(mUserId) >= MIN_AUTO_PIN_REQUIREMENT_LENGTH;
     }
 
     private boolean getPinAutoConfirmSettingState() {
