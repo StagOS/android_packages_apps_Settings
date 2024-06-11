@@ -987,7 +987,8 @@ public class ChooseLockPassword extends SettingsActivity {
         }
 
         private boolean isAutoPinConfirmPossible(int currentPinLength) {
-            return currentPinLength >= MIN_AUTO_PIN_REQUIREMENT_LENGTH;
+            return true;
+            // return currentPinLength >= MIN_AUTO_PIN_REQUIREMENT_LENGTH;
         }
 
         private void setOnAutoConfirmOptionClickListener() {
